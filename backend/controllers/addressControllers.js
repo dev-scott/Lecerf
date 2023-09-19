@@ -22,6 +22,7 @@ export const getAddresses = async (req, res) => {
 
 export const getAddress = async (req, res) => {
   const address = await Address.findById(req.query.id);
+  console.log("voici l'adresse en question" , address)
 
   if (!address) {
     return next(new ErrorHandler("Address not found", 404));

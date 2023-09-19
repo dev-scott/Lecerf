@@ -10,6 +10,10 @@ const getAddresses = async () => {
   const cookieName = getCookieName();
   const nextAuthSessionToken = nextCookies.get(cookieName);
 
+  window.localStorage.setItem("nextAuthSessionToken", nextAuthSessionToken);
+
+  console.log(localStorage.getItem("nextAuthSessionToken"))
+
   const { data } = await axios.get(`${process.env.API_URL}/api/address`, {
     headers: {
       Cookie: `${nextAuthSessionToken?.name}=${nextAuthSessionToken?.value}`,
