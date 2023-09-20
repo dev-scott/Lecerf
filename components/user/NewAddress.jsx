@@ -1,14 +1,21 @@
 "use client";
 
 import React, { useState, useContext, useEffect } from "react";
+import { useSession } from "next-auth/react";
 
 import Sidebar from "../layouts/Sidebar";
+import { toast } from "react-toastify";
 
 import { countries } from "countries-list";
 import AuthContext from "@/context/AuthContext";
-import { toast } from "react-toastify";
+
 
 const NewAddress = () => {
+
+  const {data} = useSession()
+console.log(data)
+
+
   const { error, addNewAddress, clearErrors } = useContext(AuthContext);
 
   const countriesList = Object.values(countries);
@@ -26,7 +33,12 @@ const NewAddress = () => {
       clearErrors();
     }
   }, [error]);
+  
 
+
+const userId = data?.user._id
+console.log(userId)
+  
   const submitHandler = (e) => {
     e.preventDefault();
 
@@ -37,6 +49,7 @@ const NewAddress = () => {
       zipCode,
       phoneNo,
       country,
+      userId
     };
 
     addNewAddress(newAddress);

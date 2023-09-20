@@ -3,7 +3,8 @@ import Address from "../models/address";
 import ErrorHandler from "../utils/errorHandler";
 
 export const newAddress = async (req, res) => {
-  req.body.user = req.user._id;
+  // req.body.user = req.user._id;
+  // console.log(req.body)
 
   const address = await Address.create(req.body);
 
@@ -12,8 +13,9 @@ export const newAddress = async (req, res) => {
   });
 };
 
-export const getAddresses = async (req, res) => {
-  const addresses = await Address.find({ user: req.user._id });
+export const getAddresses = async (req, res , userId) => {
+  console.log("mon userId est" , userId)
+  const addresses = await Address.find({ userId: userId });
 
   res.status(200).json({
     addresses,
@@ -22,7 +24,6 @@ export const getAddresses = async (req, res) => {
 
 export const getAddress = async (req, res) => {
   const address = await Address.findById(req.query.id);
-  console.log("voici l'adresse en question" , address)
 
   if (!address) {
     return next(new ErrorHandler("Address not found", 404));

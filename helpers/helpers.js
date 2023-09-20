@@ -1,6 +1,3 @@
-
-
-
 export const getPriceQueryParams = (queryParams, key, value) => {
   const hasValueInParam = queryParams.has(key);
 
@@ -44,5 +41,3 @@ export const getCookieName = () => {
 
   return cookieName;
 };
-
-

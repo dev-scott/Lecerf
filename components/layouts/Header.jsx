@@ -12,7 +12,6 @@ const Header = () => {
   const { user, setUser } = useContext(AuthContext);
 
   const { data } = useSession();
-  console.log(data)
 
   useEffect(() => {
     if (data) {

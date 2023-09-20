@@ -33,23 +33,24 @@ export default async function handler(req, res) {
   try {
     const session = await getSession({ req });
     console.log("voici donc ma session", session);
-    if(!session){
-      return res
-           .status(401)
-           .json({ message: "vous n'ete pas authorise , inscrivez vous d'abord" });
-    }
+ 
     if(req.method==="GET"){
-      req= session
+      
+      console.log("on execute le get",session)
+      
+       req= session
+       const userId = session.user._id
+       console.log(userId)
 
-      getAddresses(req,res);
+      getAddresses(req,res , userId);
         // return res.status(200).json({ addresses });
 
 
     }
     else if(req.method==="POST"){
       // req= session
-
-      newAddress(req,res , session);
+console.log("on execute le post")
+      newAddress(req,res);
         // return res.status(200).json({ addresses });
 
 
