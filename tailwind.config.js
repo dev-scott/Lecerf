@@ -6,7 +6,14 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+
+      content:{
+        bg1: "url('/images/bg1.png')",
+
+      }
+
+    },
   },
   plugins: [],
 };

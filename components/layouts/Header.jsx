@@ -24,7 +24,7 @@ const Header = () => {
 
   return (
     <header className="bg-white py-2 border-b">
-      <div className="container max-w-screen-xl mx-auto px-4">
+      <div className="container  max-w-screen-2xl mx-auto px-4">
         <div className="flex flex-wrap items-center">
           <div className="flex-shrink-0 mr-5">
             <a href="/">
@@ -36,6 +36,10 @@ const Header = () => {
               />
             </a>
           </div>
+          <div className="flex flex-wrap items-center justify-between  space-x-2 px-4">
+            {/* <Link href="/" className="px-3 py-2 text-center text-gray-400 shadow-sm border border-gray-200 rounded-md block bg-blue-white ">Home</Link> */}
+            <Link href="/shop" className="px-3 py-2  text-center text-gray-400  shadow-sm border border-gray-200 rounded-md block bg-white " >Boutique</Link>
+          </div>
           <Search />
 
           <div className="flex items-center space-x-2 ml-auto">
@@ -45,7 +49,7 @@ const Header = () => {
             >
               <i className="text-gray-400 w-5 fa fa-shopping-cart"></i>
               <span className="hidden lg:inline ml-1">
-                Cart (<b>{cartItems?.length || 0}</b>)
+                Panier (<b>{cartItems?.length || 0}</b>)
               </span>
             </Link>
             {!user ? (
@@ -54,7 +58,7 @@ const Header = () => {
                 className="px-3 py-2 inline-block text-center text-gray-700 bg-white shadow-sm border border-gray-200 rounded-md hover:bg-gray-100 hover:border-gray-300"
               >
                 <i className="text-gray-400 w-5 fa fa-user"></i>
-                <span className="hidden lg:inline ml-1">Sign in</span>
+                <span className="hidden lg:inline ml-1">Se connecter</span>
               </Link>
             ) : (
               <Link href="/me">
