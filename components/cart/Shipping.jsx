@@ -6,8 +6,22 @@ import Link from "next/link";
 import React, { useContext, useState } from "react";
 import { toast } from "react-toastify";
 import BreadCrumbs from "../layouts/BreadCrumbs";
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
 const Shipping = ({ addresses }) => {
+
+
+  const router = useRouter();
+
+  
+  const {data} = useSession()
+
+  
+  const userId = data?.user._id
+
+  console.log(userId)
+
   const { cart } = useContext(CartContext);
 
   const [shippingInfo, setShippinInfo] = useState("");
@@ -20,17 +34,23 @@ const Shipping = ({ addresses }) => {
     if (!shippingInfo) {
       return toast.error("Please select your shipping address");
     }
+
+    console.log("les infos de ce que l'on commande :",  cart.cartItems, shippingInfo , userId)
     // move to stripe checkoutpage
     try {
       const { data } = await axios.post(
         `${process.env.API_URL}/api/orders/checkout_session`,
         {
-          items: cart?.cartItems,
+          productItems: cart?.cartItems,
           shippingInfo,
+           userId
         }
       );
 
-      window.location.href = data.url;
+      router.push("/me");
+
+
+      // window.location.href = data.url;
     } catch (error) {
       console.log(error.response);
     }

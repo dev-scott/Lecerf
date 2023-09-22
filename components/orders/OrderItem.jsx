@@ -8,7 +8,7 @@ const OrderItem = ({ order }) => {
         <div className="mb-4 lg:mb-0">
           <p className="font-semibold">
             <span>Order ID: {order?._id} </span>
-            {order?.orderStatus == "Processing" ? (
+            {/* {order?.orderStatus == "Processing" ? (
               <span className="text-red-500">
                 • {order?.orderStatus.toUpperCase()}
               </span>
@@ -16,7 +16,7 @@ const OrderItem = ({ order }) => {
               <span className="text-green-500">
                 • {order?.orderStatus.toUpperCase()}
               </span>
-            )}
+            )} */}
           </p>
           <p className="text-gray-500">{order?.createAt?.substring(0, 10)} </p>
         </div>
@@ -41,7 +41,7 @@ const OrderItem = ({ order }) => {
             <li>{order?.shippingInfo?.country}</li>
           </ul>
         </div>
-        <div>
+        {/* <div>
           <p className="text-gray-400 mb-1">Payment</p>
           <ul className="text-gray-600">
             <li className="text-green-400">
@@ -50,7 +50,7 @@ const OrderItem = ({ order }) => {
             <li>Tax paid: ${order?.paymentInfo?.taxPaid}</li>
             <li>Total paid: ${order?.paymentInfo?.amountPaid}</li>
           </ul>
-        </div>
+        </div> */}
       </div>
 
       <hr className="my-4" />

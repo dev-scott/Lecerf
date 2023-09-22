@@ -1,13 +1,34 @@
+"use client"
+
 import React from "react";
+import { motion } from "framer-motion";
+import { fadeIn, staggerContainer } from "@/helpers/motion";
 
 const Hero = () => {
   return (
     <div className="bg-gradient-to-r from-white to-blue-50 pt-2  ">
-      <div className="container  max-w-screen-2xl mx-auto px-4  max-h-[600px] h-[600px]  flex flex-wrap items-center">
-        <div className="flex-1  h-full py-4 flex flex-col justify-center space-y-5">
+      <motion.div
+      
+      variants={staggerContainer}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: false, amount: 0.25 }}
+      
+      className="container  max-w-screen-2xl mx-auto px-4  max-h-[600px] h-[600px]  flex flex-wrap items-center">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ one: true, amount: 0.5 }}
+          transition={{ duration: 0.5 }}
+          variants={{
+            hidden: { opacity: 0, x: -50 },
+            visible: { opacity: 1, x: 0 },
+          }}
+          className="flex-1  h-full py-4 flex flex-col justify-center space-y-5"
+        >
           <p>Nous avons de nouvelles collections pour vous 🔥</p>
           <h1 className="w-full text-5xl font-bold leading-tight ">
-            Les meilleur produits <br /> a votre dispositions <br /> 
+            Les meilleur produits <br /> a votre dispositions <br />
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-700 via-pink-500 to-purple-500">
               Lecerf
             </span>
@@ -36,9 +57,8 @@ const Hero = () => {
               <span className="text-[10px] font-semibold">clients</span>
             </div>
           </div>
-        </div>
+        </motion.div>
         <div className=" hidden flex-1  h-full relative lg:flex  ">
-            
           <span class="absolute bottom-0 right-0 z-[-1]">
             <img src="shape-3.svg" alt="" />
           </span>
@@ -48,7 +68,9 @@ const Hero = () => {
           {/* <span className="absolute top-3 -right-3">
             <img src="/images/Sparkles.png" alt="" />
           </span> */}
-          <img
+          <motion.img
+                  variants={fadeIn('up', 'tween', 0.3, 1)}
+
             src="/images/heroImg.png"
             alt="img hero"
             className=" w-full h-full object-cover"
@@ -59,7 +81,7 @@ const Hero = () => {
             className="  h-[100px] object-contain absolute -left-7 -bottom-7  transform -rotate-6 transition hover:scale-105 duration-700 ease-in-out hover:rotate-6  "
           />
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

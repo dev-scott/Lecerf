@@ -3,8 +3,8 @@ import axios from "axios";
 
 import queryString from "query-string";
 import Hero from "@/components/Home/Hero";
-// import About from "@/components/Home/about";
 import Testimonial from "@/components/Home/Testimonial";
+import Informations from "@/components/Home/Informations";
 
 export const metadata = {
   title: "Next.js 13 Ecommerce App",
@@ -34,7 +34,7 @@ const HomePage = async ({ searchParams }) => {
 
     <>
   <Hero/>
-  {/* <About/> */}
+  <Informations/>
   <Testimonial/>
   
   </>

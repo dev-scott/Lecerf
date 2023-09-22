@@ -6,12 +6,12 @@ const orderSchema = mongoose.Schema({
     required: true,
     ref: "Address",
   },
-  user: {
+  userId: {
     type: mongoose.Schema.Types.ObjectId,
     required: true,
     ref: "User",
   },
-  orderItems: [
+  productItems: [
     {
       product: {
         type: mongoose.Schema.Types.ObjectId,
@@ -36,28 +36,8 @@ const orderSchema = mongoose.Schema({
       },
     },
   ],
-  paymentInfo: {
-    id: {
-      type: String,
-      required: true,
-    },
-    status: {
-      type: String,
-      required: true,
-    },
-    taxPaid: {
-      type: Number,
-      required: true,
-    },
-    amountPaid: {
-      type: Number,
-      required: true,
-    },
-  },
-  orderStatus: {
-    type: String,
-    default: "Processing",
-  },
+
+
   createAt: {
     type: Date,
     default: Date.now,

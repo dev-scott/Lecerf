@@ -1,8 +1,21 @@
+"use client"
+
+import { fadeIn, staggerContainer } from '@/helpers/motion'
+
+
 import React from "react";
+import { motion } from 'framer-motion';
+
 
 const Testimonial = () => {
   return (
-    <section
+    <motion.div
+
+    variants={staggerContainer}
+    initial="hidden"
+    whileInView="show"
+    viewport={{ once: false, amount: 0.25 }}
+
       id="about"
       className="   py-0 lg:pt-[120px] lg:pb-[0px] relative "
     >
@@ -817,7 +830,10 @@ const Testimonial = () => {
                 </span>
 
       <div className="container max-w-screen-2xl px-4 mx-auto ">
-        <div class="flex flex-wrap">
+        <motion.div
+            variants={fadeIn('up', 'tween', 0.2, 1)}
+ 
+        class="flex flex-wrap">
           <div class="mx-4 w-full">
             <div class="mx-auto mb-[60px] max-w-[620px] text-center lg:mb-20">
               <span class="mb-2 block text-lg font-semibold text-primary">
@@ -831,10 +847,15 @@ const Testimonial = () => {
               </p>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         <div class="flex flex-wrap">
-          <div class="w-full px-4 md:w-1/2 lg:w-1/3">
+          <motion.div
+          
+          variants={fadeIn('up', 'spring', 1 * 0.5, 1)}
+
+          
+          class="w-full px-4 md:w-1/2 lg:w-1/3">
             <div
               class="ud-single-testimonial wow fadeInUp mb-12 bg-white p-8 shadow-testimonial"
               data-wow-delay=".1s
@@ -911,8 +932,13 @@ const Testimonial = () => {
                 </div>
               </div>
             </div>
-          </div>
-          <div class="w-full px-4 md:w-1/2 lg:w-1/3">
+          </motion.div>
+          <motion.div
+          
+          variants={fadeIn('up', 'spring', 2 * 0.5, 1)}
+
+
+          class="w-full px-4 md:w-1/2 lg:w-1/3">
             <div
               class="ud-single-testimonial wow fadeInUp mb-12 bg-white p-8 shadow-testimonial"
               data-wow-delay=".15s
@@ -989,8 +1015,13 @@ const Testimonial = () => {
                 </div>
               </div>
             </div>
-          </div>
-          <div class="w-full px-4 md:w-1/2 lg:w-1/3 relative">
+          </motion.div>
+          <motion.div
+          
+          variants={fadeIn('up', 'spring', 3 * 0.5, 1)}
+
+          
+          class="w-full px-4 md:w-1/2 lg:w-1/3 relative">
 
        
 
@@ -1071,10 +1102,10 @@ const Testimonial = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
-    </section>
+    </motion.div>
   );
 };
 
