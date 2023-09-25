@@ -47,7 +47,7 @@ const Shipping = ({ addresses }) => {
         }
       );
 
-      router.push("/me");
+      router.push("/me/orders");
 
 
       // window.location.href = data.url;
@@ -117,7 +117,7 @@ const Shipping = ({ addresses }) => {
                     className="px-5 py-2 inline-block text-white bg-green-600 border border-transparent rounded-md hover:bg-green-700 cursor-pointer"
                     onClick={checkoutHandler}
                   >
-                    Checkout
+                    Place order
                   </a>
                 </div>
               </article>

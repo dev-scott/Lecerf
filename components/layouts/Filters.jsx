@@ -114,12 +114,12 @@ const Filters = () => {
               <input
                 name="category"
                 type="checkbox"
-                value="Electronics"
+                value="Evening shirts"
                 className="h-4 w-4"
                 defaultChecked={checkHandler("category", "Electronics")}
                 onClick={(e) => handleClick(e.target)}
               />
-              <span className="ml-2 text-gray-500"> Electronics </span>
+              <span className="ml-2 text-gray-500">Evening shirts</span>
             </label>
           </li>
           <li>
@@ -127,12 +127,12 @@ const Filters = () => {
               <input
                 name="category"
                 type="checkbox"
-                value="Laptops"
+                value="Administrative shirts"
                 className="h-4 w-4"
                 defaultChecked={checkHandler("category", "Laptops")}
                 onClick={(e) => handleClick(e.target)}
               />
-              <span className="ml-2 text-gray-500"> Laptops </span>
+              <span className="ml-2 text-gray-500"> Administrative shirts </span>
             </label>
           </li>
           <li>
@@ -140,40 +140,15 @@ const Filters = () => {
               <input
                 name="category"
                 type="checkbox"
-                value="Toys"
+                value="City shirts"
                 className="h-4 w-4"
                 defaultChecked={checkHandler("category", "Toys")}
                 onClick={(e) => handleClick(e.target)}
               />
-              <span className="ml-2 text-gray-500"> Toys </span>
+              <span className="ml-2 text-gray-500"> City shirts</span>
             </label>
           </li>
-          <li>
-            <label className="flex items-center">
-              <input
-                name="category"
-                type="checkbox"
-                value="Office"
-                className="h-4 w-4"
-                defaultChecked={checkHandler("category", "Office")}
-                onClick={(e) => handleClick(e.target)}
-              />
-              <span className="ml-2 text-gray-500"> Office </span>
-            </label>
-          </li>
-          <li>
-            <label className="flex items-center">
-              <input
-                name="category"
-                type="checkbox"
-                value="Beauty"
-                className="h-4 w-4"
-                defaultChecked={checkHandler("category", "Beauty")}
-                onClick={(e) => handleClick(e.target)}
-              />
-              <span className="ml-2 text-gray-500"> Beauty </span>
-            </label>
-          </li>
+        
         </ul>
 
         <hr className="my-4" />

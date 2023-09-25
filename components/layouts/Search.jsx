@@ -20,7 +20,7 @@ const Search = () => {
 
   return (
     <form
-      className="flex flex-nowrap items-center w-full order-last md:order-none mt-5 md:mt-0 md:w-2/4 lg:w-2/4"
+      className="flex  items-center w-full order-last md:order-none mt-5 md:mt-0 md:w-2/4 lg:w-2/4 flex-wrap "
       onSubmit={submitHandler}
     >
       <input
@@ -33,7 +33,7 @@ const Search = () => {
       />
       <button
         type="button"
-        className="px-4 py-2 inline-block text-white border border-transparent bg-blue-600 text-white rounded-md hover:bg-blue-700"
+        className="px-4 mt-4 sm:mt-0 py-2 inline-block text-white border border-transparent bg-blue-600 text-white rounded-md hover:bg-blue-700"
         onClick={submitHandler}
       >
         Rechercher

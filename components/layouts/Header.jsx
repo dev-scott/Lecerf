@@ -36,11 +36,20 @@ const Header = () => {
               />
             </a>
           </div>
-          <div className="flex flex-wrap items-center justify-between  space-x-2 px-4">
+
+          <div className=" flex-wrap items-center justify-between hidden lg:flex space-x-2 px-4">
             {/* <Link href="/" className="px-3 py-2 text-center text-gray-400 shadow-sm border border-gray-200 rounded-md block bg-blue-white ">Home</Link> */}
-            <Link href="/shop" className="px-3 py-2  text-center text-gray-400  shadow-sm border border-gray-200 rounded-md block bg-white " >Boutique</Link>
+            <Link
+              href="/shop"
+              className="px-3 py-2  text-center text-gray-400  shadow-sm border border-gray-200 rounded-md block bg-white "
+            >
+              Boutique
+            </Link>
           </div>
+
           <Search />
+
+          
 
           <div className="flex items-center space-x-2 ml-auto">
             <Link
@@ -69,7 +78,7 @@ const Header = () => {
                       user?.avatar ? user?.avatar?.url : "/images/default.png"
                     }
                   />
-                  <div className="space-y-1 font-medium">
+                  <div className="space-y-1 font-medium hidden lg:flex">
                     <p>
                       {user?.name}
                       <time className="block text-sm text-gray-500 dark:text-gray-400">
@@ -82,14 +91,16 @@ const Header = () => {
             )}
           </div>
 
-          <div className="lg:hidden ml-2">
-            <button
-              type="button"
-              className="bg-white p-3 inline-flex items-center rounded-md text-black hover:bg-gray-200 hover:text-gray-800 border border-transparent"
-            >
-              <span className="sr-only">Open menu</span>
-              <i className="fa fa-bars fa-lg"></i>
-            </button>
+          <div className="lg:hidden  w-full">
+            <div className="flex flex-wrap items-center justify-between w-full  space-x-2 px-4">
+              {/* <Link href="/" className="px-3 py-2 text-center text-gray-400 shadow-sm border border-gray-200 rounded-md block bg-blue-white ">Home</Link> */}
+              <Link
+                href="/shop"
+                className="px-3 py-2  text-center text-gray-400  shadow-sm border border-gray-200 rounded-md block bg-white w-full "
+              >
+                Boutique
+              </Link>
+            </div>
           </div>
         </div>
       </div>

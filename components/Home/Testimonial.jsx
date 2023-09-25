@@ -425,7 +425,7 @@ const Testimonial = () => {
                   </svg>
                 </span> */}
 
-<span class="absolute -top-12 right-0 z-[-1]">
+<span class="absolute -top-12 right-0 z-[-1] hidden lg:block">
                   <svg
                     width="200"
                     height="300"
@@ -829,7 +829,7 @@ const Testimonial = () => {
                   </svg>
                 </span>
 
-      <div className="container max-w-screen-2xl px-4 mx-auto ">
+      <div className="container max-w-screen-2xl px-4 mx-auto pt-6">
         <motion.div
             variants={fadeIn('up', 'tween', 0.2, 1)}
  

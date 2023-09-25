@@ -6,7 +6,7 @@ import { fadeIn, staggerContainer } from "@/helpers/motion";
 
 const Hero = () => {
   return (
-    <div className="bg-gradient-to-r from-white to-blue-50 pt-2  ">
+    <div className="bg-gradient-to-r pt-6 from-white to-blue-50 pt-2  ">
       <motion.div
       
       variants={staggerContainer}
@@ -27,7 +27,7 @@ const Hero = () => {
           className="flex-1  h-full py-4 flex flex-col justify-center space-y-5"
         >
           <p>Nous avons de nouvelles collections pour vous 🔥</p>
-          <h1 className="w-full text-5xl font-bold leading-tight ">
+          <h1 className="w-full text-2xl lg:text-5xl font-bold leading-tight ">
             Les meilleur produits <br /> a votre dispositions <br />
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-700 via-pink-500 to-purple-500">
               Lecerf
