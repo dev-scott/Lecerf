@@ -38,6 +38,7 @@ const getOrders = async (searchParams) => {
 
 const AdminOrdersPage = async ({ searchParams }) => {
   const orders = await getOrders(searchParams);
+  console.log(orders)
 
   return <Orders orders={orders} />;
 };

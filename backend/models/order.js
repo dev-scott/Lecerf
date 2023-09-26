@@ -1,15 +1,13 @@
 import mongoose from "mongoose";
 
 const orderSchema = mongoose.Schema({
-  shippingInfo: {
-    type: mongoose.Schema.Types.ObjectId,
+  name: {
+    type: String,
     required: true,
-    ref: "Address",
   },
-  userId: {
-    type: mongoose.Schema.Types.ObjectId,
+  phoneNo: {
+    type: String,
     required: true,
-    ref: "User",
   },
   productItems: [
     {
@@ -36,7 +34,6 @@ const orderSchema = mongoose.Schema({
       },
     },
   ],
-
 
   createAt: {
     type: Date,

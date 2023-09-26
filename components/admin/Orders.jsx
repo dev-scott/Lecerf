@@ -4,6 +4,7 @@ import Link from "next/link";
 import React, { useContext, useEffect } from "react";
 import CustomPagination from "../layouts/CustomPagination";
 import OrderContext from "@/context/OrderContext";
+import { toast } from "react-toastify";
 
 const Orders = ({ orders }) => {
   const { deleteOrder, error, clearErrors } = useContext(OrderContext);
@@ -30,13 +31,13 @@ const Orders = ({ orders }) => {
               ID
             </th>
             <th scope="col" className="px-6 py-3">
-              Amount Paid
+              Name
             </th>
             <th scope="col" className="px-6 py-3">
-              Status
+              Phone
             </th>
             <th scope="col" className="px-6 py-3">
-              Actions
+              Products
             </th>
           </tr>
         </thead>
@@ -44,8 +45,17 @@ const Orders = ({ orders }) => {
           {orders?.orders?.map((order) => (
             <tr className="bg-white">
               <td className="px-6 py-2">{order?._id}</td>
-              <td className="px-6 py-2">${order?.paymentInfo?.amountPaid}</td>
-              <td className="px-6 py-2">{order?.orderStatus}</td>
+              <td className="px-6 py-2">{order?.name}</td>
+              <td className="px-6 py-2">{order?.phoneNo}</td>
+              <td className="px-6 py-2">
+                {order.productItems.map((orderItem) => (
+                  <>
+                    <tr>{orderItem.name}</tr>
+                    <tr>{orderItem.quantity}</tr>
+                    <tr>{orderItem.price}</tr>
+                  </>
+                ))}
+              </td>
               <td className="px-6 py-2">
                 <div>
                   <Link

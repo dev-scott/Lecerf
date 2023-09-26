@@ -3,10 +3,34 @@ import Stripe from "stripe";
 import Order from "../models/order";
 import APIFilters from "../utils/APIFilters";
 import ErrorHandler from "../utils/errorHandler";
+import Address from "../models/address";
+import User from "../models/user";
+
 const stripe = new Stripe(process.env.STRIPE_PRIVATE_KEY);
 
 export const createOrder = async (req, res) => {
-  const order = await Order.create(req.body);
+  const myAdresse = await Address.find({ _id: req.body.shippingInfo });
+
+  const phoneNo = myAdresse[0].phoneNo;
+  console.log("mon numero", phoneNo);
+
+  const myUser = await User.find({ _id: req.body.userId });
+  console.log(myUser);
+  const name = myUser[0].name;
+  console.log("Mon nom", name);
+  const productItems = req.body.productItems;
+  console.log("les produits", productItems);
+
+  // console.log("voici mon adresse ", addresses);
+
+  const allData = {
+    name,
+    phoneNo,
+    productItems,
+  };
+
+  const order = await Order.create(allData);
+  console.log("ma commande", order);
 
   res.status(200).json({
     order,
@@ -29,16 +53,12 @@ export const getOrders = async (req, res) => {
   //   orders,
   // });
 
-
   const orders = await Order.find();
   console.log(orders);
 
   res.status(200).json({
     orders,
   });
-
-
-
 };
 
 export const getOrder = async (req, res) => {
@@ -55,7 +75,7 @@ export const getOrder = async (req, res) => {
   });
 };
 
-export const myOrders = async (req, res , userId) => {
+export const myOrders = async (req, res, userId) => {
   // const resPerPage = 2;
   // const ordersCount = await Order.countDocuments();
 
@@ -73,18 +93,13 @@ export const myOrders = async (req, res , userId) => {
   //   orders,
   // });
 
-  console.log("mon userId est" , userId)
+  console.log("mon userId est", userId);
   const orders = await Order.find({ userId: userId });
 
   res.status(200).json({
     orders,
   });
-
 };
-
-
-
-
 
 export const updateOrder = async (req, res) => {
   let order = await Order.findById(req.query.id);
