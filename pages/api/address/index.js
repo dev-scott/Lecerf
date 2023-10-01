@@ -46,6 +46,8 @@ export default async function handler(req, res) {
         // return res.status(200).json({ addresses });
 
 
+        
+
     }
     else if(req.method==="POST"){
       // req= session

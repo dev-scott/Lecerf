@@ -69,11 +69,13 @@
   },
   {
     "name": "Beats Solo3 Wireless On-Ear Headphones",
-    "price": 199.95,
-    "description": "The Beats Solo3 Wireless On-Ear Headphones are a premium set of headphones that feature Bluetooth connectivity, up to 40 hours of battery life, and on-ear controls for adjusting volume and switching tracks. They have a sleek, stylish design and come in a variety of colors. They also have a built-in microphone for taking calls and use the Apple W1 chip for easy and stable connectivity with Apple devices.",
-    "category": "Headphones",
-    "seller": "Beats by Dr. Dre",
-    "stock": 500,
+    "slug": "mugs",
+    "fromCollection": "64ee5dccacc6ee4d5def7bc4",
+    "promoPercentage":2,
+    "price": 1200,
+    "inPromo": true,
+    "views": 3,
+    "size": "65153ed261e7b01668dc0df1",
     "images": [
       {
         "public_id": "buyitnow/products/yctoxcyf8qgre4uoobnv",
@@ -84,7 +86,8 @@
         "url": "http://res.cloudinary.com/shopitnow-udemy/image/upload/v1674393954/buyitnow/products/wbrj0ivayqajozzkeb51.jpg"
       }
     ],
-    "reviews": [],
-    "ratings": 2
+    "availableColors":["#fffff"],
+    "backgroundColors": ["#fffff"],
+    "likes": 2
   }
 ]
