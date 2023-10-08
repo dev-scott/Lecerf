@@ -18,10 +18,14 @@ const ListProducts = ({ data }) => {
               <ProductItem key={product?._id} product={product} />
             ))}
 
-            <CustomPagination
+         
+
+<CustomPagination
               resPerPage={data?.resPerPage}
               productsCount={data?.filteredProductsCount}
             />
+
+
           </main>
         </div>
       </div>
